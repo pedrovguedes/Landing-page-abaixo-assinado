@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abaixo-Assinado | Felipe Barros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="toast" id="toast">✅ Assinatura registrada com sucesso!</div>
+
+  <section class="hero">
+    <nav>
+      <div class="nav-logo">
+        <span class="first">Felipe</span>
+        <span class="last">Barros</span>
+      </div>
+      <button class="nav-cta" onclick="document.getElementById('nome').focus()">Assinar</button>
+    </nav>
+
+    <div class="hero-body">
+      <div class="hero-left">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>Censura NÃO</span>
+        </div>
+
+        <h1 class="headline">
+          Abaixo-assinado <em>contra a censura</em>
+          do <strong>STF</strong>
+        </h1>
+
+        <p class="subtext">
+          Quem não se lembra do caso do jornalista maranhense Luís Pablo que foi vítima de busca e apreensão pelo STF? Ele teve computadores e celulares, equipamentos essenciais para o seu trabalho, apreendidos. Isso aconteceu após a publicação de uma matéria sobre Flávio Dino e seus familiares.
+          <br><br>
+          Este é apenas um caso. Existem muitos outros relatos de abuso e censura praticados pelo STF, tanto contra a imprensa quanto contra cidadãos brasileiros.
+          <br><br>
+          Fique por dentro do que acontece na política nacional. Assine o nosso abaixo-assinado.
+        </p>
+
+        <div class="social-section">
+          <a class="whatsapp-btn"   href="https://wa.me/5511987838531?text=Olá%20quero%20tirar%20dúvidas"  aria-label="Tirar dúvidas no WhatsApp">
+            💬 Tirar dúvidas no WhatsApp
+          </a>
+          <div class="social-hint">Felipe Barros nas redes sociais</div>
+          <div class="social-row">
+            <a class="social-icon" href="#" aria-label="Instagram">📷</a>
+            <a class="social-icon" href="#" aria-label="Facebook">f</a>
+            <a class="social-icon" href="#" aria-label="YouTube">▶</a>
+            <a class="social-icon" href="#" aria-label="X">X</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="card-header">
+          <div class="card-live">
+            <span class="card-live-dot"></span>
+            Assine agora
+          </div>
+          <div class="card-title">Exija a sua liberdade</div>
+          <div class="card-desc">
+            Precisamos de <strong>10.000 assinaturas</strong> para protocolar a solicitação.
+          </div>
+        </div>
+
+        <div class="live-count-display">
+          <div class="live-num" id="liveNum">0</div>
+          <div class="live-pessoas">pessoas já assinaram</div>
+          <div class="remaining-text" id="remainingText">Faltam 10.000 para a meta</div>
+        </div>
+
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+
+        <div class="progress-info">
+          <span class="progress-pct" id="progressPct">0%</span>
+          <span class="progress-count" id="progressCount">0 <span>/ Meta: 10.000</span></span>
+        </div>
+
+        <form class="form-fields" id="formAssinar" autocomplete="on" onsubmit="event.preventDefault(); handleSign();">
+          <input id="nome" class="form-input" type="text" placeholder="Seu nome completo" autocomplete="name" name="name" />
+          <span class="field-error" id="erroNome">Informe seu nome completo</span>
+
+          <input id="tel" class="form-input" type="tel" placeholder="WhatsApp com DDD" autocomplete="tel" name="phone" />
+          <span class="field-error" id="erroTel">Informe um telefone válido</span>
+
+          <input id="mail" class="form-input" type="email" placeholder="Seu melhor e-mail" autocomplete="email" name="email" />
+          <span class="field-error" id="erroMail">Informe um e-mail válido (ex: nome@email.com)</span>
+
+            <div class="endereco-row">
+                <input id="cidade" class="form-input" hidden="true" type="text" placeholder="Cidade" name="address-cidade" />
+                <input id="estado" class="form-input" hidden="true" type="text" placeholder="UF" name="address-uf" />
+                <input id="rua" class="form-input" type="text" placeholder="Rua / Av. / Travessa..." autocomplete="street-address" name="street-address" />
+                <input id="numero" class="form-input" type="text" placeholder="Nº" name="address-number" />
+            </div>
+          <span class="field-error" id="erroRua">Informe o endereço e o número</span>
+
+            <input id="complemento" class="form-input" type="text" placeholder="Apartamento, bloco, casa (opcional)" autocomplete="address-line2" name="address-line2" />
+
+          <input id="cep" class="form-input" type="text" placeholder="CEP (00000-000)" maxlength="9" autocomplete="postal-code" name="postal-code" />
+          <span class="field-error" id="erroCep">Informe um CEP válido (00000-000)</span>
+
+          <button class="btn-sign" type="submit">Assinar agora</button>
+        </form>
+
+        <div class="form-footer">
+          <span>Leva menos de 1 minuto</span>
+          <span>Seus dados estão protegidos conforme a LGPD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
